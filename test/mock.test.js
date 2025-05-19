@@ -10,9 +10,9 @@ describe("FlashLoanArbitrage", function () {
 
     // Deploy Mock Tokens (e.g., TokenA and TokenB)
     const MockToken = await ethers.getContractFactory("MockToken");
-    tokenA = await MockToken.deploy("Token A", "TKA", ethers.utils.parseEther("1000000"));
+    tokenA = await MockToken.deploy("Token A", "TKA", ethers.parseEther("1000000"));
     await tokenA.deployed();
-    tokenB = await MockToken.deploy("Token B", "TKB", ethers.utils.parseEther("1000000"));
+    tokenB = await MockToken.deploy("Token B", "TKB", ethers.parseEther("1000000"));
     await tokenB.deployed();
 
     // Deploy Mock DEX contracts to simulate Uniswap and SushiSwap.
@@ -38,18 +38,18 @@ describe("FlashLoanArbitrage", function () {
     await flashLoanArb.deployed();
 
     // Transfer some tokens to the FlashLoanArbitrage contract if needed.
-    await tokenA.transfer(flashLoanArb.address, ethers.utils.parseEther("1000"));
+    await tokenA.transfer(flashLoanArb.address, ethers.parseEther("1000"));
   });
 
   it("Should execute arbitrage and transfer profit to owner", async function () {
     // Define the flash loan amount (e.g., 100 TokenA)
-    const flashLoanAmount = ethers.utils.parseEther("100");
+    const flashLoanAmount = ethers.parseEther("100");
     // Define the swap path: from tokenA to tokenB.
     const path = [tokenA.address, tokenB.address];
 
     // Simulate premium as 1% (calculated inside MockPool).
     // Encode swap parameters: path and flag (true = buy on Uniswap first).
-    const params = ethers.utils.defaultAbiCoder.encode(["address[]", "bool"], [path, true]);
+    const params = ethers.defaultAbiCoder.encode(["address[]", "bool"], [path, true]);
 
     // For simulation, manually transfer the flash loan amount into the contract.
     await tokenA.transfer(flashLoanArb.address, flashLoanAmount);
