@@ -1,0 +1,16 @@
+{
+  "name": "flash-loan-arbitrage-monitor",
+  "version": "1.0.0",
+  "description": "Price monitoring backend for flash loan arbitrage",
+  "main": "priceMonitor.js",
+  "scripts": {
+    "start": "node priceMonitor.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ethers": "^5.7.2",
+    "dotenv": "^16.0.3",
+    "ws": "^8.13.0",
+    "bignumber.js": "^9.1.1"
+  }
+} 

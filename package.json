@@ -1,9 +1,22 @@
 {
+  "name": "flash-loan-arbitrage-bot",
+  "version": "1.0.0",
+  "description": "Flash loan arbitrage bot that monitors DEXes for profitable opportunities",
+  "main": "arbitrageBot.js",
+  "scripts": {
+    "start": "node arbitrageBot.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
     "hardhat": "^2.22.19"
   },
   "dependencies": {
-    "@openzeppelin/contracts": "^4.9.3"
+    "@aave/core-v3": "^1.18.0",
+    "@openzeppelin/contracts": "^4.9.3",
+    "@sushiswap/sdk": "^5.0.0-canary.116",
+    "@uniswap/sdk": "^3.0.3",
+    "dotenv": "^16.5.0",
+    "ethers": "^5.7.2"
   }
 }
