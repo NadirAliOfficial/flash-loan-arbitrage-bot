@@ -228,3 +228,4 @@ The logs will show:
 
 ## License
 MIT
+<!-- updated: 2026-05-28 -->
