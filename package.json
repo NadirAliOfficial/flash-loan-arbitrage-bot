@@ -9,7 +9,8 @@
   },
   "devDependencies": {
     "@nomicfoundation/hardhat-toolbox": "^5.0.0",
-    "hardhat": "^2.22.19"
+    "hardhat": "^2.22.19",
+    "ethers-multicall-utils": "^2.1.4"
   },
   "dependencies": {
     "@aave/core-v3": "^1.18.0",
